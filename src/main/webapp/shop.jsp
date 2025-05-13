@@ -1,95 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+ <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <style>
-          
-    </style>
     
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
 </head>
+<%@include file="frontheader.jsp"%>
 <body>
-        <section id="header">
-        <a href="#"> <img src="img/logo.png" class="logo" alt=""></a>
-        <div>
-            <ul id="navbar">
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="./shop.html">Shop</a></li>
-                <!-- <li><a href="blog.html">Blog</a></li> -->
-                <li><a href="about.html">About</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-                <li><a href="login.html"><div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-primary me-md-2" type="button">Login</button>
-
-                  </div></a></li>
-                <li id="lg-bag"><a href="card.html"> <img src="img/add-to-cart.png" height="25px" class="logo" alt=""></a></li>
-                <a href="#" id="close01"><i class="fa fa-close"></i></a>
-
-            </ul>
-        </div>
-
-        <div id="mobile">
-            <a href="card.html"> <img src="img/add-to-cart.png" height="25px" class="logo" alt=""></a>
-            <i id="bar" class="fa fa-bars"></i>
-        </div>
-       
-    </section>
-
-
-    <section id="hero">
-        <h4>Trade-in-offer</h4>
-        <h2>Super value deals</h2>
-        <h1>On all products</h1>
-        <p>Save more with coupons & up to 70% off! </p>
-        <button>Shop Now</button>
-    </section>
-
-    <section id="feature" class="section-p1 ">
-        <div class="fe-box">
-            <img src="./img/Feature/f1.png" alt="">
-            <h6>Free Shipping</h6>
-        </div>
-
-        <div class="fe-box">
-            <img src="./img/Feature/f2.png" alt="">
-            <h6>Online Order</h6>
-        </div>
+  
+   <section id="page-header">
+     
+        <h2>#stayhome</h2>
+  
+        <p>Save more with coupons & up to 70% off!</p>
         
-        <div class="fe-box">
-            <img src="./img/Feature/f3.png" alt="">
-            <h6>Save Money</h6>
-        </div>
-
-        <div class="fe-box">
-            <img src="./img/Feature/f4.png" alt="">
-            <h6>Promotions</h6>
-        </div>
-
-        <div class="fe-box">
-            <img src="./img/Feature/f5.png" alt="">
-            <h6>Happy Sell</h6>
-        </div>
-
-        <div class="fe-box">
-            <img src="./img/Feature/f6.png" alt="">
-            <h6>F24/7 Support</h6>
-        </div>
-        
-
     </section>
+
 
     <section id="products1" class="section-p1">
-        <h2>Featured Products</h2>
-        <p>Summer Collection New Morden Design</p>
+
         <div class="pro-container">
-            <div class="pro">
+            <div class="pro" onclick="window.location.href='sproduct.html';">
                 <img src="./img/Products/f1.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
@@ -225,19 +170,7 @@
                 </div>
                 <a href="#"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
             </div>
-        </div>
-    </section>
-
-    <section id="banner" class="section-m1"> 
-        <h4>Repair Services</h4>
-        <h2>Up to <span>70% off</span>-All the T-shirt & Accessories</h2>
-        <button class="normal">Explore More</button>
-    </section>
-
-    <section id="products1" class="section-p1">
-        <h2>New Arrivals</h2>
-        <p>Summer Collection New Morden Design</p>
-        <div class="pro-container">
+     
             <div class="pro">
                 <img src="./img/Products/n1.jpg" alt="">
                 <div class="des">
@@ -377,34 +310,14 @@
         </div>
     </section>  
     
-    <section id="sm-banner" class="section-p1">
-        <div class="banner-box">
-             <h4>crazy deal</h4>
-             <h2>buy 1 get 1 free</h2>
-             <span>the best classic dress is on sale at care</span>
-             <button class="white">Learn More</button>
-        </div>
-        <div class="banner-box banner-box2">
-            <h4>Spring/Summer</h4>
-            <h2>Up Comming Season</h2>
-            <span>the best classic dress is on sale at care</span>
-            <button class="white">Collection</button>
-       </div>
-    </section>
+   <!-- new section -->
 
-    <section id="banner3">
-        <div class="banner-box ">  
-            <h2>SEASONAL SALE</h2>
-            <h3>Winter Collection -50% OFF</h3>    
-        </div>
-        <div class="banner-box  banner-box2">  
-            <h2>SEASONAL SALE</h2>
-            <h3>Winter Collection -50% OFF</h3>    
-        </div>
-        <div class="banner-box banner-box3 ">  
-            <h2>SEASONAL SALE</h2>
-            <h3>Winter Collection -50% OFF</h3>    
-        </div>
+    <section id="pagination" class="section-p1">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#"><i class="fal fa-long-arrow-alt-right"></i></a>
+
+
 
     </section>
 
@@ -444,7 +357,7 @@
             <a href="#">Delivery Information</a>
             <a href="#">privacy Policy</a>
             <a href="#">Terms & Conditions</a>
-            <a href="#">Contact Us</a> 
+            <a href="#">Contact Us</a>
         </div>
 
         <div class="col">

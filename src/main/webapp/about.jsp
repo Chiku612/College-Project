@@ -1,8 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+ <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
@@ -15,41 +19,11 @@
     
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
-
+<%@include file="frontheader.jsp"%>
 <body>
-
-
-
-    <section id="header">
-        <a href="#"> <img src="img/logo.png" class="logo" alt=""></a>
-        <div>
-            <ul id="navbar">
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <!-- <li><a href="blog.html">Blog</a></li> -->
-                <li><a class="active"  href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html"><div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-primary me-md-2" type="button">Login</button>
-
-                  </div></a></li>
-               
-                
-                <li id="lg-bag"><a href="card.html"> <img src="img/add-to-cart.png" height="25px" class="logo"
-                            alt=""></a></li>
-                <a href="#" id="close01"><i class="fa fa-close"></i></a>
-
-
-            </ul>
-        </div>
-
-        <div id="mobile">
-            <a href="card.html"> <img src="img/add-to-cart.png" height="25px" class="logo" alt=""></a>
-            <i id="bar" class="fa fa-bars"></i>
-        </div>
-
-    </section>
 
     <section id="page-header" class="about-header">
         <h1>#KnowUs</h1>
