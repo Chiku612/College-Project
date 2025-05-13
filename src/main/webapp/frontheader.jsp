@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Lucky bajar</title>
 </head>
 <body>
 <section id="header">
@@ -16,12 +16,31 @@
                 <!-- <li><a href="blog.html">Blog</a></li> -->
                 <li><a href="about.jsp">About</a></li>
                 <li><a href="Contact.jsp">Contact</a></li>
-                <li><a href="login.jsp"><div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-primary me-md-2" type="button">Login</button>
+                <%
+                	if(auth != null){
+                		%>
+                		 <li><a href="user-logout"><div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                         <button class="btn btn-primary me-md-2" type="button">Logout</button>
+                         
 
-                  </div></a></li>
-                <li id="lg-bag"><a href="card.jsp"> <img src="img/add-to-cart.png" height="25px" class="logo" alt=""></a></li>
-                <a href="#" id="close01"><i class="fa fa-close"></i></a>
+                       </div></a></li>
+                       
+                        <li id="lg-bag"><a href="card.jsp"> <img src="img/add-to-cart.png" height="25px" class="logo" alt=""></a></li>
+                     <a href="#" id="close01"><i class="fa fa-close"></i></a>
+                	<% }
+                	else{%>
+                		 <li><a href="login.jsp"><div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                         <button class="btn btn-primary me-md-2" type="button">Login</button>
+                         
+
+                       </div></a></li>
+                       
+                     <li id="lg-bag"><a href="card.jsp"> <img src="img/add-to-cart.png" height="25px" class="logo" alt=""></a></li>
+                     <a href="#" id="close01"><i class="fa fa-close"></i></a>
+                	<%}
+                %>
+                
+               
 
             </ul>
         </div>
