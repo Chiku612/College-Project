@@ -1,3 +1,7 @@
+<%@page import="java.util.List"%>
+<%@page import="db.Dbcon"%>
+<%@page import="UserDao.ProductDoa"%>
+<%@page import="bk.Product"%>
 <%@ page import = "bk.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -7,6 +11,9 @@
     if(auth!=null){
     	request.setAttribute("auth", auth);
     }
+    
+    ProductDoa pd = new ProductDoa(Dbcon.getConnection());
+    List<Product> products = pd.getAllProduct();
     %>
     
 <!DOCTYPE html>
@@ -75,147 +82,45 @@
         
 
     </section>
+    
+  
 
     <section id="products1" class="section-p1">
         <h2>Featured Products</h2>
         <p>Summer Collection New Morden Design</p>
+        
         <div class="pro-container">
-            <div class="pro">
-                <img src="./img/Products/f1.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Leriya Fashion Shirt for Men</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>$70</h4>
-                    
+           
+       
+              <%
+    	if(!products.isEmpty()){
+    		for(Product p:products){
+    			%>
+    			 <div class="pro">
+    			 <img src="./img/Products/<%=p.getImage() %>" alt="">
+                 <div class="des">
+                     <span>adidas</span>
+                     <h5><%=p.getCategory() %></h5>
+                     <div class="star">
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                     </div>
+                     <h4><%=p.getPrice() %></h4>
+                          
                 </div>
                 <a href="#"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
             </div>
-            <div class="pro">
-                <img src="./img/Products/f2.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Leriya Fashion Shirt for Men</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>$70</h4>
-                    
-                </div>
-                <a href="#"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
-            </div>
-            <div class="pro">
-                <img src="./img/Products/f3.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Leriya Fashion Shirt for Men</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>$70</h4>
-                    
-                </div>
-                <a href="#"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
-            </div>
-            <div class="pro">
-                <img src="./img/Products/f4.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Leriya Fashion Shirt for Men</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>$70</h4>
-                    
-                </div>
-                <a href="#"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
-            </div>
-            <div class="pro">
-                <img src="./img/Products/f5.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Leriya Fashion Shirt for Men</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>$70</h4>
-                    
-                </div>
-                <a href="#"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
-            </div>
-            <div class="pro">
-                <img src="./img/Products/f6.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Leriya Fashion Shirt for Men</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>$70</h4>
-                    
-                </div>
-                <a href="#"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
-            </div>
-            <div class="pro">
-                <img src="./img/Products/f7.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Leriya Fashion Shirt for Men</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>$70</h4>
-                    
-                </div>
-                <a href="#"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
-            </div>
-            <div class="pro">
-                <img src="./img/Products/n1.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Leriya Fashion Shirt for Men</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>$70</h4>
-                    
-                </div>
-                <a href="#"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
-            </div>
+                     <% 
+    		}
+    	}
+    %>
+    
+    
+               
+        
         </div>
     </section>
 

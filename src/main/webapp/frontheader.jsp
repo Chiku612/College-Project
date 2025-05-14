@@ -19,6 +19,8 @@
                 <%
                 	if(auth != null){
                 		%>
+                	
+                		
                 		 <li><a href="user-logout"><div class="d-grid gap-2 d-md-flex justify-content-md-end">
                          <button class="btn btn-primary me-md-2" type="button">Logout</button>
                          
@@ -29,6 +31,11 @@
                      <a href="#" id="close01"><i class="fa fa-close"></i></a>
                 	<% }
                 	else{%>
+                	
+                		<li><a href="signup.jsp"><div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-primary me-md-2" type="button">Sign Up </button>
+                </div></a></li>
+                	
                 		 <li><a href="login.jsp"><div class="d-grid gap-2 d-md-flex justify-content-md-end">
                          <button class="btn btn-primary me-md-2" type="button">Login</button>
                          

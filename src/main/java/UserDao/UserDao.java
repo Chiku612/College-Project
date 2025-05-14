@@ -21,7 +21,7 @@ public class UserDao {
 	public User userLogin(String email ,String pass) {
 		User user = null;
 		try {
-			query = "select * from userinfo where email=? and pass=?";
+			query = "select * from users where email=? and password=?";
 			ps = this.com.prepareStatement(query);
 			
 			ps.setString(1, email);
@@ -31,7 +31,7 @@ public class UserDao {
 			if(rs.next()) {
 				user = new User();
 				user.setId(rs.getInt("id"));
-				user.setName(rs.getString("name"));
+				user.setName(rs.getString("username"));
 				user.setEmail(rs.getString("email"));
 			}
 		}
