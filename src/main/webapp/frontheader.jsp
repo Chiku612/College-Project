@@ -16,6 +16,12 @@
                 <!-- <li><a href="blog.html">Blog</a></li> -->
                 <li><a href="about.jsp">About</a></li>
                 <li><a href="Contact.jsp">Contact</a></li>
+                
+                
+                <li><a href="products.jsp">Product</a></li>
+                <li><a href="user-details.jsp">UserInfo</a></li>
+                <li><a href="sproduct.jsp">Sproducts</a></li>
+            
                 <%
                 	if(auth != null){
                 		%>

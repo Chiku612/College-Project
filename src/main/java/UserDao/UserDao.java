@@ -3,7 +3,10 @@ package UserDao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
+import bk.Product;
 import bk.User;
 
 
@@ -43,5 +46,29 @@ public class UserDao {
 		
 	}
 	
+	public List<User> getAllProduct(){
+		List<User> users= new ArrayList<User>();
+		
+		try {
+			query = "select * from users";
+			ps = this.com.prepareStatement(query);
+			rs=ps.executeQuery();
+			
+			while(rs.next()) {
+				User row = new User();
+				row.setId(rs.getInt("id"));
+				row.setName(rs.getString("username"));
+				row.setEmail(rs.getString("email"));
+				
+				
+				users.add(row);
+			}
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		return users;
+		
+	}
 	
 }

@@ -31,7 +31,7 @@
                 <div class="card shadow">
                     <h3 class="text-center mb-4"> Admin Login</h3>
 
-                    <form action="loginServlet" method="post">
+                    <form action="admin-login" method="post">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>

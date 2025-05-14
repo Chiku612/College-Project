@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
 
     <style>
         body {
@@ -51,6 +52,9 @@
 
                     <p class="text-center mt-3">
                         Don't have an account? <a href="signup.jsp">Sign up</a>
+                    </p>
+                     <p class="text-center mt-3">
+                         <a href="AdminLogin.jsp">Admin Login</a>
                     </p>
                 </div>
             </div>
