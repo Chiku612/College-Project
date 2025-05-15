@@ -1,9 +1,14 @@
+<%@page import="bk.User"%>
 <%@page import="db.Dbcon"%>
 <%@page import="UserDao.ProductDoa"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
 <%@ page import="bk.Product" %>
 <%
+	User admin = (User) request.getSession().getAttribute("admin");
+if(admin!=null){
+	request.setAttribute("admin", admin);
+}
 
 ProductDoa pd = new ProductDoa(Dbcon.getConnection());
 List<Product> products = pd.getAllProduct();

@@ -19,6 +19,10 @@ public class LogOutServlet extends HttpServlet {
 				request.getSession().removeAttribute("auth");
 				response.sendRedirect("index.jsp");
 			}
+			if(request.getSession().getAttribute("admin")!=null) {
+				request.getSession().removeAttribute("admin");
+				response.sendRedirect("index.jsp");
+			}
 			else {
 				response.sendRedirect("index.jsp");
 			}

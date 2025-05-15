@@ -17,13 +17,20 @@
                 <li><a href="about.jsp">About</a></li>
                 <li><a href="Contact.jsp">Contact</a></li>
                 
+               <%
+               		if(admin !=null){
+               			%>
+               			<li><a href="products.jsp">Product</a></li>
+                        <li><a href="user-details.jsp">UserInfo</a></li>
+                         <li><a href="add-product.jsp">AddProduct</a></li>
+               		<%}
+               
+               %> 
                 
-                <li><a href="products.jsp">Product</a></li>
-                <li><a href="user-details.jsp">UserInfo</a></li>
                 <li><a href="sproduct.jsp">Sproducts</a></li>
             
                 <%
-                	if(auth != null){
+                	if(auth != null||admin !=null){
                 		%>
                 	
                 		
