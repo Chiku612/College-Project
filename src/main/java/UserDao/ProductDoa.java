@@ -44,4 +44,32 @@ public class ProductDoa {
 		
 	}
 	
+	public Product addProduct(String name,String type,String price,String image) {
+		int x = 0;
+		Product pro = new Product();
+		try {
+			query = "INSERT INTO product (name,category,image,price) values(?,?,?,?)";
+			ps = this.com.prepareStatement(query);
+			
+			ps.setString(1, name);
+			ps.setString(2, type);
+			ps.setString(3, image);
+			ps.setString(4,price);
+			
+			x=ps.executeUpdate();
+			
+			if(x>0) {
+				System.out.println("insert ");
+			}
+			else {
+				System.out.println("not insert");
+			}
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+		
+		return pro;	
+	}
+	
 }

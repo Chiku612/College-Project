@@ -114,7 +114,7 @@
                          <i class="fa fa-star"></i>
                          <i class="fa fa-star"></i>
                      </div>
-                     <h4><%=p.getPrice() %></h4>
+                     <h4> $ <%=p.getPrice() %></h4>
                           
                 </div>
                 <a href="df"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
@@ -145,8 +145,11 @@
                    
               <%
     	if(!products.isEmpty()){
+    		int count = 0;
     		for(Product p:products){
-    			if(p.getId()>108){
+    			count++;
+    			System.out.print(count);
+    			if(count>8){
     			%>
     			 <div class="pro" onclick="window.location.href='sproduct.jsp';">
     			 <img src="./img/Products/<%=p.getImage() %>" alt="">
@@ -160,7 +163,7 @@
                          <i class="fa fa-star"></i>
                          <i class="fa fa-star"></i>
                      </div>
-                     <h4><%=p.getPrice() %></h4>
+                     <h4>$<%=p.getPrice() %></h4>
                           
                 </div>
                 <a href="df"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
