@@ -1,9 +1,18 @@
+<%@page import="UserDao.SProductDao"%>
+<%@page import="bk.SProducts"%>
+<%@page import="bk.Product"%>
+<%@page import="java.util.List"%>
+<%@page import="db.Dbcon"%>
+<%@page import="UserDao.ProductDoa"%>
 <%@page import="bk.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
     
         <%
+        String strid = request.getParameter("id");
+        int id = Integer.parseInt(strid);
+        System.out.println("From jsp : "+strid);
     	User auth = (User) request.getSession().getAttribute("auth");
     if(auth!=null){
     	request.setAttribute("auth", auth);
@@ -13,6 +22,14 @@
     if(admin!=null){
     	request.setAttribute("admin", admin);
     }
+    
+    ProductDoa pd = new ProductDoa(Dbcon.getConnection());
+    List<Product> products = pd.getAllProduct();
+   
+    
+    SProductDao spd = new SProductDao(Dbcon.getConnection());
+    SProducts s = spd.spporoduct(id);
+    System.out.println("The item is : "+s.getImage());
     %>
     
     
@@ -32,9 +49,23 @@
 <%@include file="frontheader.jsp"%>
 <body>
     
+    
+<% System.out.println(s.getImage());
+	System.out.println(s.getCategory());
+	System.out.println(s.getId());
+	System.out.println(s.getId());
+	
+	if(products.isEmpty()){
+		for(Product p:products){
+			p.getId();
+		}
+	}
+	
+
+%>
     <section id="prodetails" class="section-p1">
         <div class="single-pro-image">
-            <img src="./img/Products/f1.jpg" width="100%" id="MainImg">
+            <img src="./img/Products/<%=s.getImage()%>" width="100%" id="MainImg">
 
             <div class="small-img-group">
                 <div class="small-img-col">
@@ -52,9 +83,9 @@
             </div>
         </div>
         <div class="single-pro-details">
-            <h6>Home/ T-Shirt</h6>
-            <h4>Men's Faishion T Shirt</h4>
-            <h2>$139.00</h2>
+            <h6>Home/ <%=s.getName() %></h6>
+            <h4><%= s.getCategory() %> </h4>
+            <h2>$<%=s.getPrice() %></h2>
             <select>
                 <option>Select Size</option>
                 <option>XL</option>
@@ -64,6 +95,7 @@
             </select>
             <input type="number" name="" value="1">
             <button class="normal">Add to Cart</button>
+             <button class="normal" style = "background: blue;">Buy Now</button>
             <h4>Product Details</h4>
             <span> Loream ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
                 et dolore magna aliqua.</span>
@@ -74,11 +106,11 @@
         <h2>Featured Products</h2>
         <p>Summer Collection New Morden Design</p>
         <div class="pro-container">
-            <div class="pro" onclick="window.location.href='sproduct.jsp';">
-                <img src="./img/Products/n1.jpg" alt="">
+            <div class="pro" onclick="window.location.href='sproduct.jsp?id=<%=s.getId() %>';">
+                <img src="./img/Products/<%=s.getImage()%>" alt="">
                 <div class="des">
                     <span>adidas</span>
-                    <h5>Leriya Fashion Shirt for Men</h5>
+                    <h5><%= s.getCategory() %></h5>
                     <div class="star">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
@@ -86,12 +118,12 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                     </div>
-                    <h4>$70</h4>
+                    <h4>$<%=s.getPrice() %></h4>
 
                 </div>
                 <a href="#"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
             </div>
-            <div class="pro" onclick="window.location.href='sproduct.jsp';" >
+            <div class="pro" onclick="window.location.href='sproduct.jsp?id=<%=s.getId() %>';" >
                 <img src="./img/Products/n2.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
@@ -108,7 +140,7 @@
                 </div>
                 <a href="#"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
             </div>
-            <div class="pro" onclick="window.location.href='sproduct.jsp';">
+            <div class="pro" onclick="window.location.href='sproduct.jsp?id=<%=s.getId() %>';">
                 <img src="./img/Products/n3.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>
@@ -125,7 +157,7 @@
                 </div>
                 <a href="#"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
             </div>
-            <div class="pro" onclick="window.location.href='sproduct.jsp';">
+            <div class="pro" onclick="window.location.href='sproduct.jsp?id=<%=s.getId() %>';">
                 <img src="./img/Products/n4.jpg" alt="">
                 <div class="des">
                     <span>adidas</span>

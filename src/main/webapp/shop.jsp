@@ -62,7 +62,7 @@
         	if(!products.isEmpty()){
         		for(Product p :products){
         			%>
-        			 <div class="pro" onclick="window.location.href='sproduct.html';">
+        			 <div class="pro" onclick="window.location.href='sproduct.jsp';">
                      <img src="./img/Products/<%=p.getImage() %>" alt="">
                      <div class="des">
                          <span>adidas</span>

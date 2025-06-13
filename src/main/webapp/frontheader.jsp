@@ -27,7 +27,7 @@
                
                %> 
                 
-                <li><a href="sproduct.jsp">Sproducts</a></li>
+               
             
                 <%
                 	if(auth != null||admin !=null){
@@ -42,6 +42,9 @@
                        
                         <li id="lg-bag"><a href="card.jsp"> <img src="img/add-to-cart.png" height="25px" class="logo" alt=""></a></li>
                      <a href="#" id="close01"><i class="fa fa-close"></i></a>
+                	
+                <%-- <li><a href="sproduct.jsp">Sproducts</a></li> --%>	
+                	
                 	<% }
                 	else{%>
                 	

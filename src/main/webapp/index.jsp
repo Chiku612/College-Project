@@ -100,9 +100,12 @@
        
               <%
     	if(!products.isEmpty()){
+    		int count = 0;
     		for(Product p:products){
+    			count++;
+    			if(count<=8){
     			%>
-    			 <div class="pro" onclick="window.location.href='sproduct.jsp';">
+    			 <div class="pro" onclick="window.location.href='sproduct.jsp?id=<%=p.getId() %>';">
     			 <img src="./img/Products/<%=p.getImage() %>" alt="">
                  <div class="des">
                      <span>adidas</span>
@@ -117,9 +120,11 @@
                      <h4> $ <%=p.getPrice() %></h4>
                           
                 </div>
-                <a href="df"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
+                <a href="sproduct.jsp?id=<%= p.getId()%>"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
             </div>
-                     <% 
+                    
+                    <% 
+    			}
     		}
     	}
     %>
@@ -151,7 +156,7 @@
     			System.out.print(count);
     			if(count>8){
     			%>
-    			 <div class="pro" onclick="window.location.href='sproduct.jsp';">
+    			 <div class="pro" onclick="window.location.href='sproduct.jsp?id=<%=p.getId()%>';">
     			 <img src="./img/Products/<%=p.getImage() %>" alt="">
                  <div class="des">
                      <span>adidas</span>
@@ -166,7 +171,7 @@
                      <h4>$<%=p.getPrice() %></h4>
                           
                 </div>
-                <a href="df"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
+                <a href="sproduct.jsp?id=<%=p.getId() %>"><i id="speciali" class="fa fa-shopping-cart cart "></i></a>
             </div>
                      <% 
     			}

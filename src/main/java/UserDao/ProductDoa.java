@@ -54,7 +54,7 @@ public class ProductDoa {
 			ps.setString(1, name);
 			ps.setString(2, type);
 			ps.setString(3, image);
-			ps.setString(4,price);
+			ps.setString(4, price);
 			
 			x=ps.executeUpdate();
 			
